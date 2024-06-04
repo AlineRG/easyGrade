@@ -3,42 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EasyGrade</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <main>
+    <header>
         <div>
-            <p>Iniciar sesion</p>
-            <div>
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="email@dominio.com">
-                <div id="emailHelp" class="form-text">Nunca compartiremos tu información con nadie.</div>
-            </div>
-            <div>
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" required placeholder>
-            </div>
-            <button type="button" class="btn btn-dark">Submit</button>
+            <nav>
+                <ul>
+                    <li><a href="login.html">Home</a></li>
+                </ul>
+            </nav>
         </div>
+        
+    </header>
 
-        <div>
-            <p>Registrar usuario</p>
-        <div>
-            <label for="firstlastname" class="form-label">Nombre y Apellido</label>
-            <input type="text" class="form-control" id="firstlastname" aria-describedby="emailHelp">
-        </div>
-        <div>
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="email@dominio.com">
-            <div id="emailHelp" class="form-text">Nunca compartiremos tu información con nadie</div>
-        </div>
-        <div>
-            <label for="password" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" required placeholder>
-        </div>
-        <button type="button" class="btn btn-dark">Crear usuario</button>
-        </div>
+    
+    <div class="main-container">
+        <main>
+               
+                <div>
+                    <p>Iniciar sesión</p>
+                    <label for="loginEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="loginEmail" aria-describedby="loginEmailHelp" required placeholder="email@dominio.com">
+                    <div id="loginEmailHelp" class="form-text">Nunca compartiremos tu información con nadie.</div>
+                </div>
+
+                <div>
+                    <label for="loginPassword" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="loginPassword" required placeholder="Contraseña">
+                </div>
+                <button type="submit" class="btn btn-dark btn-block">Submit</button>
+            </div>
+
+        <div class="form-container">
+                <p>Registrar usuario</p>
+                <div>
+                    <label for="registerName" class="form-label">Nombre y Apellido</label>
+                    <input type="text" class="form-control" id="registerName" aria-describedby="registerNameHelp" placeholder="Nombre y Apellido">
+                    <div id="registerNameHelp" class="form-text">Por favor, introduce tu nombre y apellido.</div>
+                </div>
+                <div>
+                    <label for="registerEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="registerEmail" aria-describedby="registerEmailHelp" required placeholder="email@dominio.com">
+                    <div id="registerEmailHelp" class="form-text">Nunca compartiremos tu información con nadie.</div>
+                </div>
+                <div>
+                    <label for="registerPassword" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="registerPassword" required placeholder="Contraseña">
+                </div>
+                <button type="submit" class="btn btn-dark btn-block">Crear usuario</button>
+            </div>
+        </main>
     </div>
-    </main>
+
+    <!-- Incluir JS de Bootstrap y sus dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
