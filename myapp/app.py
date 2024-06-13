@@ -13,7 +13,12 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
+#Routes 
+
 @app.route('/')
 def index():
     return render_template('login.html')
 
+@app.route('/login', methods = ['GET', 'POST'])
+def login():
+    form = LoginForm()
