@@ -35,22 +35,9 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 
 
-#Definir modelo de usuario
+#Modelo de usuario
 class User(db.Model):
     id = db.Column (db.Integer, primary_key = True)
     username = db.Column(db.String(30), unique = True, nullable = False)
     email = db.Column(db.String(30), unique = True, nullable = False)
     password = db.Column(db.String(50), nullable=False)
-
-#Formulario de registro
-class RegisterForm(FlaskForm):
-    username = StringField('Username', validators=[InputRequired(), Length(min=10, max=50)])
-    email = StringField('Email', validators=[InputRequired(), Email(), Length(max=50)])
-    password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=20)])
-    submit = SubmitField('Sign Up')
-
-#Formulario de inicio de sesion
-class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[InputRequired(), Length(min=10, max=50)])
-    password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=20)])
-    submit = SubmitField('Log In')
