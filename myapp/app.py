@@ -30,3 +30,13 @@ class User(db.Model):
     username = db.Column(db.String(30), unique = True, nullable = False)
     email = db.Column(db.String(30), unique = True, nullable = False)
     password = db.Column(db.String(50), nullable=False)
+
+
+#Definir formulario de registro
+class RegisterForm(FlaskForm):
+    username = StringField('Username', validators=[InputRequired(), Length(min=10, max=50)])
+    email = StringField('Email', validators=[InputRequired(), Email(), Length(max=50)])
+    password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=20)])
+    submit = SubmitField('Sign Up')
+
+    
