@@ -21,28 +21,26 @@ def index():
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
-        if user and check_password_hash(user.password, form.password.data):
-            flash('Inicio de sesión exitoso!')
+    login_form = LoginForm()
+    register_form = RegisterForm()
+
+    if login_form.validate_on_submit():
+        user = User.query.filter_by(email=login_form.email.data).first()
+        if user and check_password_hash(user.password, login_form.password.data):
+            flash('Inicio de sesion existoso')
             return redirect(url_for('index'))
         else:
             flash('Usuario o Contraseña incorrectos')
 
-    return render_template('login.html', form=form)
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    form = RegisterForm()
-
-    if form.validate_on_submit():
-        hashed_password = generate_password_hash(form.password.data, method='sha256')
-        new_user = User(username=form.username.data, email=form.email.data, password=hashed_password)
+    if register_form.validate_on_submit():
+        hashed_password = generate_password_hash(register_form.password.data, method = 'sha256')
+        new_user = User(username = register_form.username.data, email = register_form.email.data, password = hashed_password)
         db.session.add(new_user)
         db.session.commit()
         flash('Registro exitoso')
         return redirect(url_for('login'))
+    
+    return render_template('login.html', login_form=login_form, register_form=register_form)
 
 
 #Modelo de usuario
@@ -64,3 +62,4 @@ class LoginForm(FlaskForm):
     username = StringField('Username', validators=[InputRequired(), Length(min=10, max=50)])
     password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=20)])
     submit = SubmitField('Log In')
+
