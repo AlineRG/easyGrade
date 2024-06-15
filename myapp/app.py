@@ -62,3 +62,7 @@ class LoginForm(FlaskForm):
 @app.route('/')
 def index():
     return "Bienvenido a EasyGrade"
+
+if __name__ == '__main__':
+    db.create_all()
+    app.run(debug=True)
