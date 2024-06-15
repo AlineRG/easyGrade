@@ -28,6 +28,8 @@ def login():
         else:
             flash('Usuario o Contraseña incorrectos')
 
+    return render_template('login.html', login_form=login_form, register_form=register_form)
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     login_form = LoginForm()
