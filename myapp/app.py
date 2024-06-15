@@ -15,10 +15,6 @@ db = SQLAlchemy(app)
 
 #Routes 
 
-@app.route('/')
-def index():
-    return render_template('login.html')
-
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     login_form = LoginForm()
@@ -63,3 +59,6 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=20)])
     submit = SubmitField('Log In')
 
+@app.route('/')
+def index():
+    return "Bienvenido a EasyGrade"
