@@ -25,17 +25,27 @@
                
                 <div>
                     <p>Iniciar sesión</p>
-                    <label for="loginEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="loginEmail" aria-describedby="loginEmailHelp" required placeholder="email@dominio.com">
-                    <div id="loginEmailHelp" class="form-text">Nunca compartiremos tu información con nadie.</div>
-                </div>
+                    <form method="POST" action="{{ url_for('login') }}"></form>
+                    {{ login_form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ login_form.email.label(class="form-label") }}
+                        {{ login_form.email(class="form-control") }}
+                        {% for error in login_form.email.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
 
-                <div>
-                    <label for="loginPassword" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="loginPassword" required placeholder="Contraseña">
-                </div>
-                <button type="submit" class="btn btn-dark btn-block">Submit</button>
+                    </div>
+                    <div class="form-group">
+                        {{ login_form.password.label(class="form-label") }}
+                        {{ login_form.password(class="form-control") }}
+                        {% for error in login_form.password.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                    </div>
+                    {{ login_form.submit(class="btn btn-dark btn-block") }}
+                </form>
             </div>
+
 
         <div class="form-container">
                 <p>Registrar usuario</p>
