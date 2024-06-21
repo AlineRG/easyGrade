@@ -56,7 +56,7 @@
                     <div class="form-group">
                         {{ register_form.email.label(class="form-label") }}
                         {{ register_form.email(class="form-control") }}
-                        {% for error in registration_form.email.errors %}
+                        {% for error in register_form.email.errors %}
                             <span class="text-danger">{{ error }}</span>
                         {% endfor %}
                       </div>
