@@ -45,16 +45,17 @@
                     {{ login_form.submit(class="btn btn-dark btn-block") }}
                 </form>
             </div>
-
-
-        <div class="form-container">
-            <p>Registrar usuario</p>
-                <form method="POST" action="{{ url_for('register') }}">  {{ register_form.hidden_tag() }}  <div class="form-group">
-                    {{ register_form.name.label(class="form-label") }}
-                    {{ register_form.name(class="form-control") }}
-                    {% for error in register_form.name.errors %}
-                        <span class="text-danger">{{ error }}</span>
-                    {% endfor %}
+            
+            <div class="form-container">
+                <p>Registrar usuario</p>
+                <form method="POST" action="{{ url_for('register') }}">
+                    {{ register_form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ register_form.username.label(class="form-label") }}
+                        {{ register_form.username(class="form-control") }}
+                        {% for error in register_form.username.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
                     </div>
                     <div class="form-group">
                         {{ register_form.email.label(class="form-label") }}
