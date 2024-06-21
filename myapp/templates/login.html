@@ -59,7 +59,7 @@
                         {% for error in register_form.email.errors %}
                             <span class="text-danger">{{ error }}</span>
                         {% endfor %}
-                      </div>
+                    </div>
                     <div class="form-group">
                         {{ register_form.password.label(class="form-label") }}
                         {{ register_form.password(class="form-control") }}
@@ -67,9 +67,9 @@
                             <span class="text-danger">{{ error }}</span>
                         {% endfor %}
                     </div>
-                      <button type="submit" class="btn btn-dark btn-block">Crear usuario</button>
-                    </form>
-                  </div>
+                    <button type="submit" class="btn btn-dark btn-block">Crear usuario</button>
+                </form>
+            </div>
         </main>
     </div>
 
