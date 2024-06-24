@@ -3,3 +3,4 @@ myapp/Include
 myapp/Lib
 myapp/Scripts
 myapp/pyvenv.cfg
+instance/myDb.db
