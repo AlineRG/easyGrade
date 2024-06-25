@@ -8,7 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = "mysecret"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///myapp/instance/myDB.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///myDB.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
@@ -70,7 +70,7 @@ def register():
 
 @app.route('/')
 def index():
-    return "Bienvenido a EasyGrade"
+    return "Bienvenido a EasyGrade!"
 
 with app.app_context():
     db.create_all()
