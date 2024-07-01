@@ -70,10 +70,10 @@ def register():
     return render_template('login.html', login_form=login_form, register_form=register_form)
 
 
-
 @app.route('/')
+@app.route('/index')
 def index():
-    return "Bienvenido a EasyGrade!"
+    return render_template('index.html')
 
 with app.app_context():
     db.create_all()
