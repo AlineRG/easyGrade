@@ -42,6 +42,9 @@ def login():
     register_form = RegisterForm()
 
     if login_form.validate_on_submit():
+        email = login_form.email.data
+        password = login_form.password.data
+
         user = User.query.filter_by(email=login_form.email.data).first()
         if user and check_password_hash(user.password, login_form.password.data):
             flash('Inicio de sesion existoso')
