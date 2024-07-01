@@ -48,7 +48,7 @@ def login():
         user = User.query.filter_by(email=login_form.email.data).first()
         if user and check_password_hash(user.password, login_form.password.data):
             flash('Inicio de sesion existoso')
-            return redirect(url_for('login'))
+            return redirect(url_for('index'))
         else:
             flash('Usuario o Contraseña incorrectos')
 
