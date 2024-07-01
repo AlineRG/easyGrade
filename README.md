@@ -44,7 +44,7 @@ Follow these steps to install and set up EasyGrade on your local system:
 
 
 # Usage
-### Running the Application
+## Running the Application
 
 1. Ensure that EasyGrade is installed and configured as per the [Installation](#installation) instructions.
 2. Start the Flask application:
