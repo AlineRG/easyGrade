@@ -40,7 +40,7 @@ Follow these steps to install and set up EasyGrade on your local system:
 3. Install dependencies:
     pip install -r requirements.txt
 4. Run the application
-    flask run
+    flask --app myapp/app.py run
 5. Access EasyGrade
 
 
