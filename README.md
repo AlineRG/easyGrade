@@ -35,6 +35,7 @@ Follow these steps to install and set up EasyGrade on your local system:
 ```bash
    git clone https://github.com/AlineRG/easyGrade
    cd easygrade
+```
 2. Create a virtual environment 
 3. Install dependencies:
     pip install -r requirements.txt
