@@ -13,3 +13,10 @@ conn.execute(
          CORREO_ELECTRONICO VARCHAR NOT NULL);"""
 )
 print("Table MAESTROS created successfully")
+
+conn.execute(
+    """CREATE TABLE MATERIAS
+         (ID INTEGER PRIMARY KEY NOT NULL,
+         NOMBRE VARCHAR NOT NULL);"""
+)
+print("Table MATERIAS created successfully")
