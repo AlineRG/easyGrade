@@ -20,3 +20,18 @@ conn.execute(
          NOMBRE VARCHAR NOT NULL);"""
 )
 print("Table MATERIAS created successfully")
+
+conn.execute(
+    """CREATE TABLE ALUMNOS
+         (ID INTEGER PRIMARY KEY NOT NULL,
+         NOMBRE VARCHAR NOT NULL,
+         APELLIDO VARCHAR NOT NULL,
+         FECHA_NACIMIENTO DATE,
+         EMAIL VARCHAR,
+         TELEFONO VARCHAR,
+         MATERIA_ID INTEGER NOT NULL,
+         PASSWORD_ID INTEGER NOT NULL,
+         FOREIGN KEY (MATERIA_ID) REFERENCES MATERIAS(ID),
+         FOREIGN KEY (PASSWORD_ID) REFERENCES PASSWORD(ID));"""
+)
+print("Table ALUMNOS created successfully")
