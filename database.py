@@ -35,3 +35,14 @@ conn.execute(
          FOREIGN KEY (PASSWORD_ID) REFERENCES PASSWORD(ID));"""
 )
 print("Table ALUMNOS created successfully")
+
+conn.execute(
+    """CREATE TABLE EJERCICIOS
+         (ID INTEGER PRIMARY KEY NOT NULL,
+         DESCRIPCION VARCHAR NOT NULL,
+         QUESTION VARCHAR NOT NULL,
+         ANSWER VARCHAR NOT NULL,
+         MATERIA_ID INTEGER NOT NULL,
+         FOREIGN KEY (MATERIA_ID) REFERENCES MATERIAS(ID));"""
+)
+print("Table EJERCICIOS created successfully")
