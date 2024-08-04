@@ -53,3 +53,16 @@ conn.execute(
          PASSWORD VARCHAR NOT NULL);"""
 )
 print("Table PASSWORDS created successfully")
+
+conn.execute(
+    """CREATE TABLE TAREAS
+         (ID INTEGER PRIMARY KEY NOT NULL,
+         DESCRIPCION TEXT NOT NULL,
+         MATERIA_ID INTEGER NOT NULL,
+         ALUMNO_ID INTEGER NOT NULL,
+         MAESTRO_ID INTEGER NOT NULL,
+         FOREIGN KEY (MATERIA_ID) REFERENCES MATERIAS(ID),
+         FOREIGN KEY (ALUMNO_ID) REFERENCES ALUMNOS(ID),
+         FOREIGN KEY (MAESTRO_ID) REFERENCES MAESTROS(ID));"""
+)
+print("Table TAREAS created successfully")
