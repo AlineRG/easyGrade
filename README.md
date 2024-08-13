@@ -60,3 +60,31 @@ Follow these steps to install and set up EasyGrade on your local system:
 4. login 
 - Navigate to the "Login" page and enter your username and password to access the application.
 
+# Database 
+
+1. Import modules 
+import sqlite3
+import os
+
+2. Conexion and create the database file
+conn = sqlite3.connect("instance/myDB.db")
+print("Opened database successfully")
+
+3. Create tables
+Example
+conn.execute(
+    """CREATE TABLE MAESTROS
+         (ID INTEGER PRIMARY KEY NOT NULL,
+         NOMBRE VARCHAR NOT NULL,
+         APELLIDO VARCHAR NOT NULL,
+         TELEFONO VARCHAR,
+         DIRECCION VARCHAR,
+         CORREO_ELECTRONICO VARCHAR NOT NULL);"""
+)
+print("Table MAESTROS created successfully")
+
+4. Run the file
+When this file is executed, a database file named myDB.db is created in the instance directory. 
+
+
+
