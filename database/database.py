@@ -1,6 +1,9 @@
 import sqlite3
+import os
 
-conn = sqlite3.connect("myDB.db")
+print(os.getcwd(), "------------")
+
+conn = sqlite3.connect("instance/myDB.db")
 print("Opened database successfully")
 
 conn.execute(
