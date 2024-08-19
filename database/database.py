@@ -7,7 +7,7 @@ conn = sqlite3.connect("instance/myDB.db")
 print("Opened database successfully")
 
 conn.execute(
-    """CREATE TABLE MAESTROS
+    """CREATE TABLE IF NOT EXISTS MAESTROS
          (ID INTEGER PRIMARY KEY NOT NULL,
          NOMBRE VARCHAR NOT NULL,
          APELLIDO VARCHAR NOT NULL,
@@ -18,14 +18,14 @@ conn.execute(
 print("Table MAESTROS created successfully")
 
 conn.execute(
-    """CREATE TABLE MATERIAS
+    """CREATE TABLE IF NOT EXISTS MATERIAS
          (ID INTEGER PRIMARY KEY NOT NULL,
          NOMBRE VARCHAR NOT NULL);"""
 )
 print("Table MATERIAS created successfully")
 
 conn.execute(
-    """CREATE TABLE ALUMNOS
+    """CREATE TABLE IF NOT EXISTS ALUMNOS
          (ID INTEGER PRIMARY KEY NOT NULL,
          NOMBRE VARCHAR NOT NULL,
          APELLIDO VARCHAR NOT NULL,
@@ -40,7 +40,7 @@ conn.execute(
 print("Table ALUMNOS created successfully")
 
 conn.execute(
-    """CREATE TABLE EJERCICIOS
+    """CREATE TABLE IF NOT EXISTS EJERCICIOS
          (ID INTEGER PRIMARY KEY NOT NULL,
          DESCRIPCION VARCHAR NOT NULL,
          QUESTION VARCHAR NOT NULL,
@@ -51,14 +51,14 @@ conn.execute(
 print("Table EJERCICIOS created successfully")
 
 conn.execute(
-    """CREATE TABLE PASSWORDS
+    """CREATE TABLE IF NOT EXISTS PASSWORDS
          (ID INTEGER PRIMARY KEY NOT NULL,
          PASSWORD VARCHAR NOT NULL);"""
 )
 print("Table PASSWORDS created successfully")
 
 conn.execute(
-    """CREATE TABLE TAREAS
+    """CREATE TABLE IF NOT EXISTS TAREAS
          (ID INTEGER PRIMARY KEY NOT NULL,
          DESCRIPCION TEXT NOT NULL,
          MATERIA_ID INTEGER NOT NULL,
@@ -71,7 +71,7 @@ conn.execute(
 print("Table TAREAS created successfully")
 
 conn.execute(
-    """CREATE TABLE EXAMENES
+    """CREATE TABLE IF NOT EXISTS EXAMENES
          (ID INTEGER PRIMARY KEY NOT NULL,
          DESCRIPCION TEXT NOT NULL,
          MATERIA_ID INTEGER NOT NULL,
