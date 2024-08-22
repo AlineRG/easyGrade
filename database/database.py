@@ -31,8 +31,9 @@ print("Table CONTACTOS created successfully")
 
 conn.execute(
     """CREATE TABLE IF NOT EXISTS MATERIAS
-         (ID INTEGER PRIMARY KEY NOT NULL,
-         NOMBRE VARCHAR NOT NULL);"""
+        (ID INTEGER PRIMARY KEY NOT NULL,
+        NOMBRE VARCHAR NOT NULL,
+        NIVEL VARCHAR NOT NULL);"""
 )
 print("Table MATERIAS created successfully")
 
