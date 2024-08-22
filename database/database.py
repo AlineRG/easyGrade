@@ -20,6 +20,14 @@ conn.execute(
 )
 print("Table MAESTROS created successfully")
 
+conn.execute(
+    """CREATE TABLE IF NOT EXISTS CONTACTOS
+        (CONTACTO_ID INTEGER PRIMARY KEY NOT NULL,
+        TELEFONO VARCHAR,
+        DIRECCION VARCHAR,
+        CORREO_ELECTRONICO VARCHAR NOT NULL);"""
+)
+print("Table CONTACTOS created successfully")
 
 conn.execute(
     """CREATE TABLE IF NOT EXISTS MATERIAS
