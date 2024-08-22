@@ -65,7 +65,7 @@ print("Table EJERCICIOS created successfully")
 
 conn.execute(
     """CREATE TABLE IF NOT EXISTS PASSWORDS
-         (ID INTEGER PRIMARY KEY NOT NULL,
+         (PASSWORD_ID INTEGER PRIMARY KEY NOT NULL,
          PASSWORD VARCHAR NOT NULL);"""
 )
 print("Table PASSWORDS created successfully")
