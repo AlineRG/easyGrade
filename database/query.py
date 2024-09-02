@@ -186,3 +186,6 @@ def get_alumnos_ordered_by_apellido_nombre() -> pd.DataFrame:
     df = pd.DataFrame(result_data, columns=columns)
     return df
 
+
+# Close the connection after all operations
+conn.close()
