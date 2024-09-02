@@ -44,3 +44,27 @@ def get_alumnos_data_by_materia_id(materia_id: int) -> pd.DataFrame:
     df = pd.DataFrame(result_data)
     return df
 
+
+def get_maestros_by_materia_id(materia_id: int) -> pd.DataFrame:
+    """
+    This function queries the database and retrieves the NOMBRE and APELLIDO
+    from the MAESTROS table for a specific MATERIA_ID.
+
+    Args:
+    * materia_id : int. The MATERIA_ID to query
+
+    Returns:
+    * df: pd.DataFrame. A table with NOMBRE and APELLIDO of MAESTROS
+    who teach the specified MATERIA_ID
+    """
+    query = f"""
+    SELECT MAESTROS.NOMBRE, MAESTROS.APELLIDO 
+    FROM MAESTROS 
+    JOIN MATERIAS ON MAESTROS.MAESTRO_ID = MATERIAS.MAESTRO_ID 
+    WHERE MATERIAS.ID = {materia_id};
+    """
+    result = conn.execute(query)
+
+    result_data = result.fetchall()
+    df = pd.DataFrame(result_data, columns=["NOMBRE", "APELLIDO"])
+    return df
