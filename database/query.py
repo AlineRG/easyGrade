@@ -138,3 +138,29 @@ def count_alumnos_by_maestro_id(maestro_id: int) -> pd.DataFrame:
     result_data = result.fetchall()
     df = pd.DataFrame(result_data, columns=["Count"])
     return df
+
+
+def get_tareas_by_alumno_id(alumno_id: int) -> pd.DataFrame:
+    """
+    This function queries the database and retrieves all the data from the TAREAS
+    table where ALUMNO_ID == alumno_id.
+
+    Args:
+    * alumno_id : int. The ALUMNO_ID to query
+
+    Returns:
+    * df: pd.DataFrame. A table with all the data from the TAREAS table
+    where ALUMNO_ID is equal to the variable alumno_id
+    """
+    query = f"""
+    SELECT * 
+    FROM TAREAS 
+    WHERE ALUMNO_ID = {alumno_id};
+    """
+    result = conn.execute(query)
+
+    result_data = result.fetchall()
+    columns = [description[0] for description in result.description]  # Get column names
+    df = pd.DataFrame(result_data, columns=columns)
+    return df
+
