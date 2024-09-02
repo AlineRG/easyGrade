@@ -1,7 +1,6 @@
 import sqlite3
 import pandas as pd
 
-# Establish the connection once
 conn = sqlite3.connect("instance/easyGrade.db")
 
 
@@ -136,7 +135,8 @@ def count_alumnos_by_maestro_id(maestro_id: int) -> pd.DataFrame:
     result = conn.execute(query)
 
     result_data = result.fetchall()
-    df = pd.DataFrame(result_data, columns=["Count"])
+    columns = [description[0] for description in result.description]
+    df = pd.DataFrame(result_data, columns=columns)
     return df
 
 
@@ -160,7 +160,7 @@ def get_tareas_by_alumno_id(alumno_id: int) -> pd.DataFrame:
     result = conn.execute(query)
 
     result_data = result.fetchall()
-    columns = [description[0] for description in result.description]  # Get column names
+    columns = [description[0] for description in result.description]
     df = pd.DataFrame(result_data, columns=columns)
     return df
 
@@ -182,6 +182,7 @@ def get_alumnos_ordered_by_apellido_nombre() -> pd.DataFrame:
     result = conn.execute(query)
 
     result_data = result.fetchall()
-    df = pd.DataFrame(result_data, columns=["Count"])
+    columns = [description[0] for description in result.description]
+    df = pd.DataFrame(result_data, columns=columns)
     return df
 
