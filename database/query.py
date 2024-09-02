@@ -164,3 +164,24 @@ def get_tareas_by_alumno_id(alumno_id: int) -> pd.DataFrame:
     df = pd.DataFrame(result_data, columns=columns)
     return df
 
+
+def get_alumnos_ordered_by_apellido_nombre() -> pd.DataFrame:
+    """
+    This function queries the database to retrieve all data from the ALUMNOS
+    table and orders the results by APELLIDO and then NOMBRE.
+
+    Returns:
+    * df: pd.DataFrame. A table with all the data from the ALUMNOS table
+    ordered by APELLIDO and NOMBRE.
+    """
+    query = """
+    SELECT * 
+    FROM ALUMNOS 
+    ORDER BY APELLIDO, NOMBRE;
+    """
+    result = conn.execute(query)
+
+    result_data = result.fetchall()
+    df = pd.DataFrame(result_data, columns=["Count"])
+    return df
+
