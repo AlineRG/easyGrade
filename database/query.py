@@ -91,3 +91,26 @@ def get_average_calificacion_by_alumno_id(alumno_id: int) -> float:
     result_data = result.fetchall()
     df = pd.DataFrame(result_data, columns=["Promedio"])
     return df
+
+
+def get_materias_by_maestro_id(maestro_id: int) -> pd.DataFrame:
+    """
+    This function queries the database and retrieves the NOMBRE of all
+    subjects from the MATERIAS table where MAESTRO_ID == maestro_id.
+
+    Args:
+    * maestro_id : int. The MAESTRO_ID to query
+
+    Returns:
+    * df: pd.DataFrame. A table with the NOMBRE of subjects taught by the given MAESTRO_ID
+    """
+    query = f"""
+    SELECT NOMBRE 
+    FROM MATERIAS 
+    WHERE MAESTRO_ID = {maestro_id};
+    """
+    result = conn.execute(query)
+
+    result_data = result.fetchall()
+    df = pd.DataFrame(result_data, columns=["NOMBRE"])
+    return df
