@@ -114,3 +114,27 @@ def get_materias_by_maestro_id(maestro_id: int) -> pd.DataFrame:
     result_data = result.fetchall()
     df = pd.DataFrame(result_data, columns=["NOMBRE"])
     return df
+
+
+def count_alumnos_by_maestro_id(maestro_id: int) -> pd.DataFrame:
+    """
+    This function queries the database to count the number of ALUMNOS
+    enrolled in subjects taught by a specific MAESTRO_ID.
+
+    Args:
+    * maestro_id : int. The MAESTRO_ID to query
+
+    Returns:
+    * df: pd.DataFrame. A table with the count of ALUMNOS for the given MAESTRO_ID
+    """
+    query = f"""
+    SELECT COUNT(ALUMNOS.ALUMNO_ID) AS Count 
+    FROM ALUMNOS 
+    JOIN MATERIAS ON ALUMNOS.MATERIA_ID = MATERIAS.ID 
+    WHERE MATERIAS.MAESTRO_ID = {maestro_id};
+    """
+    result = conn.execute(query)
+
+    result_data = result.fetchall()
+    df = pd.DataFrame(result_data, columns=["Count"])
+    return df
