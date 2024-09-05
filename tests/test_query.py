@@ -41,3 +41,10 @@ def get_materias_by_maestro_id():
     assert isinstance(materia, str)
     assert materia == "Matematicas"
 
+
+def count_alumnos_by_maestro_id():
+    df = count_alumnos_by_maestro_id(1)
+    alumnos = df["ALUMNOS"].values[0]
+
+    assert isinstance(alumnos, int)
+    assert alumnos == "2"
