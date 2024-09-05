@@ -1,5 +1,14 @@
 import pytest
-from database.query import get_maestros_data_by_apellido
+from database.query import (
+    get_maestros_data_by_apellido,
+    get_alumnos_data_by_materia_id,
+    get_maestros_by_materia_id,
+    get_average_calificacion_by_alumno_id,
+    get_materias_by_maestro_id,
+    count_alumnos_by_maestro_id,
+    get_tareas_by_alumno_id,
+    get_alumnos_ordered_by_apellido_nombre,
+)
 
 
 def test_query():
