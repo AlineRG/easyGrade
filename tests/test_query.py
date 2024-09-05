@@ -56,3 +56,11 @@ def get_tareas_by_alumno_id():
 
     assert isinstance(tareas, str)
     assert tareas == "Tarea 1, Tarea 2"
+
+
+def get_alumnos_ordered_by_apellido_nombre():
+    df = get_alumnos_ordered_by_apellido_nombre()
+    alumno = df["ALUMNO"].values[0]
+
+    assert isinstance(alumno, str)
+    assert alumno == "Ramirez"
