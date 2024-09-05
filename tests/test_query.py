@@ -8,3 +8,12 @@ def test_query():
 
     assert isinstance(nombre, str)
     assert nombre == "Marta"
+
+
+def get_alumnos_data_by_materia_id():
+    df = get_alumnos_data_by_materia_id(1)
+    alumno = df["ALUMNO"].values[0]
+
+    assert isinstance(alumno, str)
+    assert alumno == "Juan"
+
