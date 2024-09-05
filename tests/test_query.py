@@ -25,3 +25,11 @@ def get_maestros_by_materia_id():
     assert isinstance(maestro, str)
     assert maestro == "Marta"
 
+
+def get_average_calificacion_by_alumno_id():
+    df = get_average_calificacion_by_alumno_id(1)
+    calificacion = df["CALIFICACION"].values[0]
+
+    assert isinstance(calificacion, int)
+    assert calificacion == 8
+
