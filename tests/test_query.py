@@ -17,3 +17,11 @@ def get_alumnos_data_by_materia_id():
     assert isinstance(alumno, str)
     assert alumno == "Juan"
 
+
+def get_maestros_by_materia_id():
+    df = get_maestros_by_materia_id(1)
+    maestro = df["MAESTRO"].values[0]
+
+    assert isinstance(maestro, str)
+    assert maestro == "Marta"
+
