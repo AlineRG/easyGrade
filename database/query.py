@@ -20,7 +20,8 @@ def get_maestros_data_by_apellido(apellido: str) -> pd.DataFrame:
     result = conn.execute(query)
 
     result_data = result.fetchall()
-    df = pd.DataFrame(result_data)
+    columns = [description[0] for description in result.description]  # Get column names
+    df = pd.DataFrame(result_data, columns=columns)
     return df
 
 
