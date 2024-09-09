@@ -1,7 +1,6 @@
 import sqlite3
 import os
 
-print(os.getcwd(), "------------")
 
 conn = sqlite3.connect("instance/easyGrade.db")
 print("Opened database successfully")
