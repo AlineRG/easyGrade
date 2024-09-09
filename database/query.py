@@ -64,7 +64,6 @@ def get_maestros_by_materia_id(materia_id: int) -> pd.DataFrame:
     WHERE MATERIAS.ID = {materia_id};
     """
     result = conn.execute(query)
-
     result_data = result.fetchall()
     df = pd.DataFrame(result_data, columns=["NOMBRE", "APELLIDO"])
     return df
@@ -87,7 +86,6 @@ def get_average_calificacion_by_alumno_id(alumno_id: int) -> float:
     WHERE ALUMNO_ID = {alumno_id};
     """
     result = conn.execute(query)
-
     result_data = result.fetchall()
     df = pd.DataFrame(result_data, columns=["Promedio"])
     return df
@@ -110,7 +108,6 @@ def get_materias_by_maestro_id(maestro_id: int) -> pd.DataFrame:
     WHERE MAESTRO_ID = {maestro_id};
     """
     result = conn.execute(query)
-
     result_data = result.fetchall()
     df = pd.DataFrame(result_data, columns=["NOMBRE"])
     return df
@@ -134,7 +131,6 @@ def count_alumnos_by_maestro_id(maestro_id: int) -> pd.DataFrame:
     WHERE MATERIAS.MAESTRO_ID = {maestro_id};
     """
     result = conn.execute(query)
-
     result_data = result.fetchall()
     columns = [description[0] for description in result.description]
     df = pd.DataFrame(result_data, columns=columns)
@@ -159,7 +155,6 @@ def get_tareas_by_alumno_id(alumno_id: int) -> pd.DataFrame:
     WHERE ALUMNO_ID = {alumno_id};
     """
     result = conn.execute(query)
-
     result_data = result.fetchall()
     columns = [description[0] for description in result.description]
     df = pd.DataFrame(result_data, columns=columns)
@@ -184,7 +179,7 @@ def get_alumnos_by_materia_ordered_by_apellido_nombre(materia_id: int) -> pd.Dat
     ORDER BY APELLIDO, NOMBRE;
     """
     result = conn.execute(query)
-
+    
     result_data = result.fetchall()
     columns = [description[0] for description in result.description]
     df = pd.DataFrame(result_data, columns=columns)
