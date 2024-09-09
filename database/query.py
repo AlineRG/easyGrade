@@ -60,7 +60,7 @@ def get_maestros_by_materia_id(materia_id: int) -> pd.DataFrame:
     query = f"""
     SELECT MAESTROS.NOMBRE, MAESTROS.APELLIDO 
     FROM MAESTROS 
-    JOIN MATERIAS ON MAESTROS.MAESTRO_ID = MATERIAS.MAESTRO_ID 
+    JOIN MATERIAS ON MAESTROS.MATERIA_ID = MATERIAS.ID
     WHERE MATERIAS.ID = {materia_id};
     """
     result = conn.execute(query)
