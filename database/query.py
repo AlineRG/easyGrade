@@ -169,7 +169,10 @@ def get_tareas_by_alumno_id(alumno_id: int) -> pd.DataFrame:
 def get_alumnos_by_materia_ordered_by_apellido_nombre(materia_id: int) -> pd.DataFrame:
     """
     This function queries the database to retrieve all data from the ALUMNOS
-    table and orders the results by APELLIDO and then NOMBRE.
+    table for a specific MATERIA_ID and orders the results by APELLIDO and then NOMBRE.
+
+    Args:
+    * materia_id : int. The MATERIA_ID to query
 
     Returns:
     * df: pd.DataFrame. A table with all the data from the ALUMNOS table
