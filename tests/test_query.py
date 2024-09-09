@@ -1,7 +1,8 @@
 import pytest
-
-def test_query():
 from database.query import *
+
+
+def test_get_maestros_data_by_apellido():
     df = get_maestros_data_by_apellido("Rodriguez")
     nombre = df["NOMBRE"].values[0]
 
