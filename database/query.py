@@ -4,7 +4,7 @@ import pandas as pd
 conn = sqlite3.connect("instance/easyGrade.db")
 
 
-def get_maestros_data_by_apellido(apellido: str) -> pd.DataFrame:
+def get_maestros_data_by_apellido() -> pd.DataFrame:
     """
     This function queries the database and retrieves all the data from the table
     MAESTROS where APELLIDO == apellido.
@@ -25,7 +25,7 @@ def get_maestros_data_by_apellido(apellido: str) -> pd.DataFrame:
     return df
 
 
-def get_alumnos_data_by_materia_id(materia_id: int) -> pd.DataFrame:
+def get_alumnos_data_by_materia_id() -> pd.DataFrame:
     """
     This function queries the database and retrieves all the data from the table
     ALUMNOS where MATERIA_ID == materia_id.
@@ -41,11 +41,12 @@ def get_alumnos_data_by_materia_id(materia_id: int) -> pd.DataFrame:
     result = conn.execute(query)
 
     result_data = result.fetchall()
+    columns = [description[0] for description in result.description]
     df = pd.DataFrame(result_data)
     return df
 
 
-def get_maestros_by_materia_id(materia_id: int) -> pd.DataFrame:
+def get_maestros_by_materia_id() -> pd.DataFrame:
     """
     This function queries the database and retrieves the NOMBRE and APELLIDO
     from the MAESTROS table for a specific MATERIA_ID.
@@ -69,7 +70,7 @@ def get_maestros_by_materia_id(materia_id: int) -> pd.DataFrame:
     return df
 
 
-def get_average_calificacion_by_alumno_id(alumno_id: int) -> float:
+def get_average_calificacion_by_alumno_id() -> float:
     """
     This function queries the database to calculate the average CALIFICACION
     from the EXAMENES table for a specific ALUMNO_ID.
@@ -87,11 +88,12 @@ def get_average_calificacion_by_alumno_id(alumno_id: int) -> float:
     """
     result = conn.execute(query)
     result_data = result.fetchall()
-    df = pd.DataFrame(result_data, columns=["Promedio"])
-    return df
+    promedio = result_data[0][0] if result_data else None
+
+    return promedio
 
 
-def get_materias_by_maestro_id(maestro_id: int) -> pd.DataFrame:
+def get_materias_by_maestro_id() -> pd.DataFrame:
     """
     This function queries the database and retrieves the NOMBRE of all
     subjects from the MATERIAS table where MAESTRO_ID == maestro_id.
@@ -113,7 +115,7 @@ def get_materias_by_maestro_id(maestro_id: int) -> pd.DataFrame:
     return df
 
 
-def count_alumnos_by_maestro_id(maestro_id: int) -> pd.DataFrame:
+def count_alumnos_by_maestro_id() -> pd.DataFrame:
     """
     This function queries the database to count the number of ALUMNOS
     enrolled in subjects taught by a specific MAESTRO_ID.
@@ -137,7 +139,7 @@ def count_alumnos_by_maestro_id(maestro_id: int) -> pd.DataFrame:
     return df
 
 
-def get_tareas_by_alumno_id(alumno_id: int) -> pd.DataFrame:
+def get_tareas_by_alumno_id() -> pd.DataFrame:
     """
     This function queries the database and retrieves all the data from the TAREAS
     table where ALUMNO_ID == alumno_id.
@@ -161,7 +163,7 @@ def get_tareas_by_alumno_id(alumno_id: int) -> pd.DataFrame:
     return df
 
 
-def get_alumnos_by_materia_ordered_by_apellido_nombre(materia_id: int) -> pd.DataFrame:
+def get_alumnos_by_materia_ordered_by_apellido_nombre() -> pd.DataFrame:
     """
     This function queries the database to retrieve all data from the ALUMNOS
     table for a specific MATERIA_ID and orders the results by APELLIDO and then NOMBRE.
@@ -173,13 +175,15 @@ def get_alumnos_by_materia_ordered_by_apellido_nombre(materia_id: int) -> pd.Dat
     * df: pd.DataFrame. A table with all the data from the ALUMNOS table
     ordered by APELLIDO and NOMBRE.
     """
-    query = """
-    SELECT * 
+    query = f"""
+    SELECT ALUMNOS.NOMBRE, ALUMNOS.APELLIDO 
     FROM ALUMNOS 
-    ORDER BY APELLIDO, NOMBRE;
+    JOIN MATERIAS ON ALUMNOS.MATERIA_ID = MATERIAS.ID 
+    WHERE MATERIAS.ID = {materia_id}
+    ORDER BY ALUMNOS.APELLIDO, ALUMNOS.NOMBRE;
     """
     result = conn.execute(query)
-    
+
     result_data = result.fetchall()
     columns = [description[0] for description in result.description]
     df = pd.DataFrame(result_data, columns=columns)
