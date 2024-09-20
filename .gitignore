@@ -4,3 +4,4 @@ myapp/Lib
 myapp/Scripts
 myapp/pyvenv.cfg
 instance/myDb.db
+.ipynb_checkpoints
