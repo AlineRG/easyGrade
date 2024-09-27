@@ -5,3 +5,5 @@ myapp/Scripts
 myapp/pyvenv.cfg
 instance/myDb.db
 .ipynb_checkpoints
+database/__pycache__
+tests/__pycache__
