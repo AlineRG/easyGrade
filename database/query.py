@@ -58,11 +58,13 @@ def get_maestros_by_materia_id(conn, materia_id) -> pd.DataFrame:
     * df: pd.DataFrame. A table with NOMBRE and APELLIDO of MAESTROS
     who teach the specified MATERIA_ID
     """
+
     query = f"""
     SELECT MAESTROS.NOMBRE, MAESTROS.APELLIDO 
-    FROM MAESTROS 
-    JOIN MATERIAS ON MAESTROS.MATERIA_ID = MATERIAS.ID
-    WHERE MATERIAS.ID = {materia_id};
+    FROM MAESTROS
+    JOIN REGISTROS_MATERIAS_MAESTROS ON MAESTROS.MAESTRO_ID = REGISTROS_MATERIAS_MAESTROS.MAESTRO_ID
+    JOIN MATERIAS ON REGISTROS_MATERIAS_MAESTROS.MATERIA_ID = MATERIAS.MATERIA_ID
+    WHERE MATERIAS.MATERIA_ID = {materia_id};
     """
     result = conn.execute(query)
     result_data = result.fetchall()
@@ -129,7 +131,7 @@ def count_alumnos_by_maestro_id(conn, maestro_id) -> pd.DataFrame:
     query = f"""
     SELECT COUNT(ALUMNOS.ALUMNO_ID) AS Count 
     FROM ALUMNOS 
-    JOIN MATERIAS ON ALUMNOS.MATERIA_ID = MATERIAS.ID 
+    JOIN MATERIAS ON ALUMNOS.MATERIA_ID = MATERIAS.MATERIA_ID 
     WHERE MATERIAS.MAESTRO_ID = {maestro_id};
     """
     result = conn.execute(query)
@@ -178,8 +180,8 @@ def get_alumnos_by_materia_ordered_by_apellido_nombre(conn, materia_id) -> pd.Da
     query = f"""
     SELECT ALUMNOS.NOMBRE, ALUMNOS.APELLIDO 
     FROM ALUMNOS 
-    JOIN MATERIAS ON ALUMNOS.MATERIA_ID = MATERIAS.ID 
-    WHERE MATERIAS.ID = {materia_id}
+    JOIN MATERIAS ON ALUMNOS.MATERIA_ID = MATERIAS.MATERIA_ID 
+    WHERE MATERIAS.MATERIA_ID = {materia_id}
     ORDER BY ALUMNOS.APELLIDO, ALUMNOS.NOMBRE;
     """
     result = conn.execute(query)
