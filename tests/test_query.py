@@ -12,12 +12,12 @@ def test_get_maestros_data_by_apellido():
         conn, "Rodriguez"
     )  # Obtener los datos del maestro
 
-    # assert len(df) == 1
-    # nombre = df["NOMBRE"].values[
-    #     0
-    # ]  # Obtener nombre del primer maestro en el Data Frame
-    # assert isinstance(nombre, str)  # Verificar que el "nombre" sea string
-    # assert nombre == "Marta"
+    assert len(df) == 1
+    nombre = df["NOMBRE"].values[
+        0
+    ]  # Obtener nombre del primer maestro en el Data Frame
+    assert isinstance(nombre, str)  # Verificar que el "nombre" sea string
+    assert nombre == "Marta"
 
 
 # # Test para obtener datos de alumnos por ID de materia
