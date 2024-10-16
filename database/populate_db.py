@@ -36,3 +36,16 @@ except Exception as error:
         "No se han cargado los datos de CALIFICACIONES_EXAMENES.csv correctamente:",
         error,
     )
+
+
+try:
+    df = pd.read_csv(
+        "C:/Users/prin_/OneDrive/Documentos/easyGrade/database/csv_files/CALIFICACIONES_MATERIA.csv"
+    )
+    df.to_sql("CALIFICACIONES_MATERIA", conn, if_exists="append", index=False)
+    print("Se han cargado los datos de CALIFICACIONES_MATERIA.csv correctamente")
+except Exception as error:
+    print(
+        "No se han cargado los datos de CALIFICACIONES_MATERIA.csv correctamente:",
+        error,
+    )
