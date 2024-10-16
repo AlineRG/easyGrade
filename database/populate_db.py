@@ -128,7 +128,7 @@ try:
     df = pd.read_csv(
         "C:/Users/prin_/OneDrive/Documentos/easyGrade/database/csv_files/TAREAS.csv"
     )
-    df.to_sql("TAREAS", conn, if_exists="append", index=False)
+    df.to_sql("TAREAS", conn, if_exists="fail", index=False)
     print("Se han cargado los datos de TAREAS.csv correctamente")
 except Exception as error:
     print(
