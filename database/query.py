@@ -27,22 +27,27 @@ def get_maestros_data_by_apellido(conn, apellido) -> pd.DataFrame:
 
 def get_alumnos_data_by_materia_id(conn, materia_id) -> pd.DataFrame:
     """
-    This function queries the database and retrieves all the data from the table
-    ALUMNOS where MATERIA_ID == materia_id.
+    This function queries the database and retrieves all the data from the ALUMNOS table
+    related to the specified MATERIA_ID in the ALUMNOS_MATERIAS table.
 
     Args:
-    * materia_id : int. The MATERIA_ID to query
+    * materia_id : int. The MATERIA_ID to query.
 
     Returns:
-    * df: pd.DataFrame. A table with all the data from the ALUMNOS table
-    where MATERIA_ID is equal to the variable materia_id
+    * df: pd.DataFrame. A DataFrame containing MATERIA_ID, ALUMNO_ID, and NOMBRE
+    from the ALUMNOS table related to the specified MATERIA_ID.
     """
-    query = f"SELECT * FROM ALUMNOS WHERE MATERIA_ID = {materia_id}"
-    result = conn.execute(query)
+    query = """
+    SELECT AM.materia_id, AM.alumno_id, A.nombre
+    FROM alumnos_materias AS AM
+    JOIN ALUMNOS AS A ON AM.alumno_id = A.ALUMNO_ID
+    WHERE AM.materia_id = ?;  
+    """
 
+    result = conn.execute(query, (materia_id,))
     result_data = result.fetchall()
     columns = [description[0] for description in result.description]
-    df = pd.DataFrame(result_data)
+    df = pd.DataFrame(result_data, columns=columns)
     return df
 
 
