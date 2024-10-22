@@ -57,20 +57,20 @@ def get_maestros_by_materia_id(conn, materia_id) -> pd.DataFrame:
     from the MAESTROS table for a specific MATERIA_ID.
 
     Args:
-    * materia_id : int. The MATERIA_ID to query
+    * materia_id : int. The MATERIA_ID to query.
 
     Returns:
     * df: pd.DataFrame. A table with NOMBRE and APELLIDO of MAESTROS
-    who teach the specified MATERIA_ID
+    who teach the specified MATERIA_ID.
     """
 
     query = f"""
     SELECT MAESTROS.NOMBRE, MAESTROS.APELLIDO 
     FROM MAESTROS
-    JOIN REGISTROS_MATERIAS_MAESTROS ON MAESTROS.MAESTRO_ID = REGISTROS_MATERIAS_MAESTROS.MAESTRO_ID
-    JOIN MATERIAS ON REGISTROS_MATERIAS_MAESTROS.MATERIA_ID = MATERIAS.MATERIA_ID
-    WHERE MATERIAS.MATERIA_ID = {materia_id};
+    JOIN REGISTRO_MATERIAS_MAESTROS ON MAESTROS.MAESTRO_ID = REGISTRO_MATERIAS_MAESTROS.MAESTRO_ID
+    WHERE REGISTRO_MATERIAS_MAESTROS.MATERIA_ID = {materia_id};
     """
+
     result = conn.execute(query)
     result_data = result.fetchall()
     df = pd.DataFrame(result_data, columns=["NOMBRE", "APELLIDO"])
