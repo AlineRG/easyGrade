@@ -158,4 +158,14 @@ conn.execute(
 )
 print("Table CALIFICACIONES_MATERIA created succesfully")
 
+conn.execute(
+    """CREATE TABLE IF NOT EXISTS ALUMNOS_MATERIAS(
+    ALUMNO_ID INTEGER,
+    MATERIA_ID INTEGER,
+    FOREIGN KEY (ALUMNO_ID) REFERENCES ALUMNOS(ALUMNO_ID),
+    FOREIGN KEY (MATERIA_ID) REFERENCES MATERIAS(MATERIA_ID)
+    );"""
+)
+print("Table ALUMNOS_MATERIAS created succesfully")
+
 conn.close()
