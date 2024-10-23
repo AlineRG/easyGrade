@@ -48,9 +48,9 @@ def test_get_maestros_by_materia_id():
 #     conn = sqlite3.connect("instance/easyGrade.db")
 #     promedio = get_average_calificacion_by_alumno_id(conn, 1)
 
-#     assert promedio == 8.0
     assert promedio is not None
     assert isinstance(promedio, (int, float))
+    assert promedio == 8.0, f"Se esperaba un promedio de 8.0, pero se obtuvo {promedio}"
 
 
 # # # # Test para obtener materias por ID de maestro
