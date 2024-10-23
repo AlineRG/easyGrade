@@ -187,8 +187,8 @@ def get_alumnos_by_materia_ordered_by_apellido_nombre(conn, materia_id) -> pd.Da
     query = f"""
     SELECT ALUMNOS.NOMBRE, ALUMNOS.APELLIDO 
     FROM ALUMNOS 
-    JOIN MATERIAS ON ALUMNOS.MATERIA_ID = MATERIAS.MATERIA_ID 
-    WHERE MATERIAS.MATERIA_ID = {materia_id}
+    JOIN ALUMNOS_MATERIA ON ALUMNOS.ALUMNO_ID = ALUMNOS_MATERIA.ALUMNO_ID 
+    WHERE ALUMNOS_MATERIA.MATERIA_ID = {materia_id}
     ORDER BY ALUMNOS.APELLIDO, ALUMNOS.NOMBRE;
     """
     result = conn.execute(query)
