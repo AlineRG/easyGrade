@@ -78,11 +78,13 @@ def test_get_tareas_by_alumno_id():
     conn = sqlite3.connect("instance/easyGrade.db")
     df = get_tareas_by_alumno_id(conn, 1)
 
+    assert not df.empty
+    assert "ALUMNO_ID" in df.columns
+    assert "DESCRIPCION" in df.columns
 
-#     assert not df.empty
-#     tareas = df["TAREAS"].tolist()
-#     assert isinstance(tareas, list)
-#     assert tareas == ["Tarea 1", "Tarea 2"]
+    tareas = df["DESCRIPCION"].tolist()
+    assert isinstance(tareas, list), "Tareas should be a list."
+
 
 
 # # # # Test para obtener alumnos por materia, ordenados por apellido y nombre
