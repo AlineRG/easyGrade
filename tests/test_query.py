@@ -53,15 +53,15 @@ def test_get_average_calificacion_by_alumno_id():
     assert promedio == 9.0, f"Se esperaba un promedio de 8.0, pero se obtuvo {promedio}"
 
 
-# # # # Test para obtener materias por ID de maestro
-# def test_get_materias_by_maestro_id():
-#     conn = sqlite3.connect("instance/easyGrade.db")
-#     df = get_materias_by_maestro_id(conn, 1)
+# Test para obtener materias por ID de maestro
+def test_get_materias_by_maestro_id():
+    conn = sqlite3.connect("instance/easyGrade.db")
+    df = get_materias_by_maestro_id(conn, 1)
 
-#     assert not df.empty
-#     materia = df["NOMBRE"].values[0]
-#     assert isinstance(materia, str)
-#     assert materia == "Matematicas"
+    assert not df.empty
+    materia = df["NOMBRE"].values[0]
+    assert isinstance(materia, str)
+    assert materia == "Matematicas"
 
 
 # # # # Test para contar alumnos por ID de maestro
