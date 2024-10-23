@@ -110,7 +110,7 @@ def get_materias_by_maestro_id(conn, maestro_id) -> pd.DataFrame:
     * maestro_id : int. The MAESTRO_ID to query.
 
     Returns:
-    * df: pd.DataFrame. A table with the NOMBRE of subjects taught by the given MAESTRO_ID
+    * df: pd.DataFrame. A table with the NOMBRE of the subjects taught by the specified MAESTRO_ID.
     """
     query = f"""
     SELECT NOMBRE 
