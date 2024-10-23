@@ -39,7 +39,7 @@ def get_alumnos_data_by_materia_id(conn, materia_id) -> pd.DataFrame:
     """
     query = """
     SELECT AM.materia_id, AM.alumno_id, A.nombre
-    FROM alumnos_materias AS AM
+    FROM alumnos_materia AS AM
     JOIN ALUMNOS AS A ON AM.alumno_id = A.ALUMNO_ID
     WHERE AM.materia_id = ?;  
     """
