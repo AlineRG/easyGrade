@@ -144,6 +144,7 @@ def count_alumnos_by_maestro_id(conn, maestro_id) -> int:
     """
     result = conn.execute(query)
     result_data = result.fetchone()  # fetchone() returns a single row
+    count = result_data[0] if result_data else 0
     return count
 
 
