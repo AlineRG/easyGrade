@@ -113,9 +113,10 @@ def get_materias_by_maestro_id(conn, maestro_id) -> pd.DataFrame:
     * df: pd.DataFrame. A table with the NOMBRE of the subjects taught by the specified MAESTRO_ID.
     """
     query = f"""
-    SELECT NOMBRE 
-    FROM MATERIAS 
-    WHERE MAESTRO_ID = {maestro_id};
+    SELECT MATERIAS.NOMBRE
+    FROM MATERIAS
+    JOIN REGISTRO_MATERIAS_MAESTROS ON MATERIAS.MATERIA_ID = REGISTRO_MATERIAS_MAESTROS.MATERIA_ID
+    WHERE REGISTRO_MATERIAS_MAESTROS.MAESTRO_ID = {maestro_id};
     """
     result = conn.execute(query)
     result_data = result.fetchall()
