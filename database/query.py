@@ -130,7 +130,7 @@ def count_alumnos_by_maestro_id(conn, maestro_id) -> int:
     enrolled in subjects taught by a specific MAESTRO_ID.
 
     Args:
-    * maestro_id : int. The MAESTRO_ID to query
+    * maestro_id : int. The MAESTRO_ID to query.
 
     Returns:
     * df: pd.DataFrame. A table with the count of ALUMNOS for the given MAESTRO_ID
@@ -178,7 +178,7 @@ def get_alumnos_by_materia_ordered_by_apellido_nombre(conn, materia_id) -> pd.Da
     table for a specific MATERIA_ID and orders the results by APELLIDO and then NOMBRE.
 
     Args:
-    * materia_id : int. The MATERIA_ID to query
+    * materia_id : int. The MATERIA_ID to query.
 
     Returns:
     * df: pd.DataFrame. A table with all the data from the ALUMNOS table
