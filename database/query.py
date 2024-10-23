@@ -28,7 +28,7 @@ def get_maestros_data_by_apellido(conn, apellido) -> pd.DataFrame:
 def get_alumnos_data_by_materia_id(conn, materia_id) -> pd.DataFrame:
     """
     This function queries the database and retrieves all the data from the ALUMNOS table
-    related to the specified MATERIA_ID in the ALUMNOS_MATERIAS table.
+    related to the specified MATERIA_ID in the ALUMNOS_MATERIA table.
 
     Args:
     * materia_id : int. The MATERIA_ID to query.
