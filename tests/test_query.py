@@ -92,12 +92,12 @@ def test_get_tareas_by_alumno_id():
     ]
 
 
-# # # # Test para obtener alumnos por materia, ordenados por apellido y nombre
-# def test_get_alumnos_by_materia_ordered_by_apellido_nombre():
-#     conn = sqlite3.connect("instance/easyGrade.db")
-#     df = get_alumnos_by_materia_ordered_by_apellido_nombre(conn, 1)
+# Test para obtener alumnos por materia, ordenados por apellido y nombre
+def test_get_alumnos_by_materia_ordered_by_apellido_nombre():
+    conn = sqlite3.connect("instance/easyGrade.db")
+    df = get_alumnos_by_materia_ordered_by_apellido_nombre(conn, 1)
 
-#     assert not df.empty
-#     assert isinstance(alumno, str)
-#     assert alumno == "Juan Perez"
+    assert not df.empty
     alumno = f"{df['NOMBRE'].values[0]} {df['APELLIDO'].values[0]}"
+    assert isinstance(alumno, str)
+    assert alumno == "Juan Perez"
