@@ -143,6 +143,7 @@ def count_alumnos_by_maestro_id(conn, maestro_id) -> int:
     WHERE REGISTRO_MATERIAS_ALUMNOS.MAESTRO_ID = {maestro_id};
     """
     result = conn.execute(query)
+    result_data = result.fetchone()  # fetchone() returns a single row
     return count
 
 
