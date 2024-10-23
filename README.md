@@ -105,7 +105,7 @@ This Python script is designed to load data into an SQLite database from CSV fil
 
 Write a function to populate the database with data from the csv files.
 
-## Here’s how the function works:
+- Here’s how the function works:
 Takes the table name (table_name) as a parameter.
 Runs an SQL query that counts how many tables in the database have the specified name.
 If the result (result_data) is 0, it means the table doesn’t exist. In that case, it loads the CSV file using pandas and inserts the data into the database.
