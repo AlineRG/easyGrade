@@ -64,15 +64,14 @@ def test_get_materias_by_maestro_id():
     assert materia == "Matematicas"
 
 
-# # # # Test para contar alumnos por ID de maestro
-# def test_count_alumnos_by_maestro_id():
-#     conn = sqlite3.connect("instance/easyGrade.db")
-#     df = count_alumnos_by_maestro_id(conn, 1)
+# Test para contar alumnos por ID de maestro
+def test_count_alumnos_by_maestro_id():
+    conn = sqlite3.connect("instance/easyGrade.db")
+    count = count_alumnos_by_maestro_id(conn, 1)
 
-#     assert not df.empty
-#     count = df["Count"].values[0]
-#     assert isinstance(count, int)
-#     assert count == 2
+    assert isinstance(count, int)
+    assert count >= 0
+
 
 
 # # # # Test para obtener las tareas por ID de alumno
