@@ -136,10 +136,11 @@ def count_alumnos_by_maestro_id(conn, maestro_id) -> int:
     * count: int. The count of ALUMNOS for the given MAESTRO_ID.
     """
     query = f"""
-    SELECT COUNT(ALUMNOS.ALUMNO_ID) AS Count 
-    FROM ALUMNOS 
-    JOIN MATERIAS ON ALUMNOS.MATERIA_ID = MATERIAS.MATERIA_ID 
-    WHERE MATERIAS.MAESTRO_ID = {maestro_id};
+    SELECT COUNT(DISTINCT ALUMNOS.ALUMNO_ID) AS count
+    FROM ALUMNOS
+    JOIN ALUMNOS_MATERIA ON ALUMNOS.ALUMNO_ID = ALUMNOS_MATERIA.ALUMNO_ID
+    JOIN REGISTRO_MATERIAS_ALUMNOS ON ALUMNOS_MATERIA.MATERIA_ID = REGISTRO_MATERIAS_ALUMNOS.MATERIA_ID
+    WHERE REGISTRO_MATERIAS_ALUMNOS.MAESTRO_ID = {maestro_id};
     """
     result = conn.execute(query)
     result_data = result.fetchall()
