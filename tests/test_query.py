@@ -73,11 +73,11 @@ def test_count_alumnos_by_maestro_id():
     assert count >= 0
 
 
+# Test para obtener las tareas por ID de alumno
+def test_get_tareas_by_alumno_id():
+    conn = sqlite3.connect("instance/easyGrade.db")
+    df = get_tareas_by_alumno_id(conn, 1)
 
-# # # # Test para obtener las tareas por ID de alumno
-# def test_get_tareas_by_alumno_id():
-#     conn = sqlite3.connect("instance/easyGrade.db")
-#     df = get_tareas_by_alumno_id(conn, 1)
 
 #     assert not df.empty
 #     tareas = df["TAREAS"].tolist()
