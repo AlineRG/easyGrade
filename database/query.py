@@ -143,10 +143,7 @@ def count_alumnos_by_maestro_id(conn, maestro_id) -> int:
     WHERE REGISTRO_MATERIAS_ALUMNOS.MAESTRO_ID = {maestro_id};
     """
     result = conn.execute(query)
-    result_data = result.fetchall()
-    columns = [description[0] for description in result.description]
-    df = pd.DataFrame(result_data, columns=columns)
-    return df
+    return count
 
 
 def get_tareas_by_alumno_id(conn, alumno_id) -> pd.DataFrame:
