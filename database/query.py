@@ -103,7 +103,8 @@ def get_average_calificacion_by_alumno_id(conn, alumno_id) -> float:
 def get_materias_by_maestro_id(conn, maestro_id) -> pd.DataFrame:
     """
     This function queries the database and retrieves the NOMBRE of all
-    subjects from the MATERIAS table where MAESTRO_ID == maestro_id.
+    subjects (MATERIAS) from the REGISTRO_MATERIAS_MAESTROS table where
+    MAESTRO_ID == maestro_id.
 
     Args:
     * maestro_id : int. The MAESTRO_ID to query
