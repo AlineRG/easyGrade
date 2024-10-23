@@ -85,6 +85,11 @@ def test_get_tareas_by_alumno_id():
     tareas = df["DESCRIPCION"].tolist()
     assert isinstance(tareas, list), "Tareas should be a list."
 
+    assert tareas == [
+        "Problema 1",
+        "Problema 2",
+        "Problema 3",
+    ]
 
 
 # # # # Test para obtener alumnos por materia, ordenados por apellido y nombre
