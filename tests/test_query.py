@@ -98,6 +98,6 @@ def test_get_tareas_by_alumno_id():
 #     df = get_alumnos_by_materia_ordered_by_apellido_nombre(conn, 1)
 
 #     assert not df.empty
-#     alumno = df["NOMBRE"].values[0]
 #     assert isinstance(alumno, str)
 #     assert alumno == "Juan Perez"
+    alumno = f"{df['NOMBRE'].values[0]} {df['APELLIDO'].values[0]}"
