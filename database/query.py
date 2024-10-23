@@ -133,7 +133,7 @@ def count_alumnos_by_maestro_id(conn, maestro_id) -> int:
     * maestro_id : int. The MAESTRO_ID to query.
 
     Returns:
-    * df: pd.DataFrame. A table with the count of ALUMNOS for the given MAESTRO_ID
+    * count: int. The count of ALUMNOS for the given MAESTRO_ID.
     """
     query = f"""
     SELECT COUNT(ALUMNOS.ALUMNO_ID) AS Count 
