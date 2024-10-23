@@ -124,7 +124,7 @@ def get_materias_by_maestro_id(conn, maestro_id) -> pd.DataFrame:
     return df
 
 
-def count_alumnos_by_maestro_id(conn, maestro_id) -> pd.DataFrame:
+def count_alumnos_by_maestro_id(conn, maestro_id) -> int:
     """
     This function queries the database to count the number of ALUMNOS
     enrolled in subjects taught by a specific MAESTRO_ID.
