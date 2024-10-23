@@ -89,32 +89,32 @@ When this file is executed, a database file named myDB.db is created in the inst
 # Test_query
 
 1. Create Tables with Data in Excel
--Download the .csv files.
--Create a csv_files folder inside the database folder.
--Upload all .csv files into the folder.
+- Download the .csv files.
+- Create a csv_files folder inside the database folder.
+- Upload all .csv files into the folder.
 
 2. Create query.py File
--Write queries to retrieve data from the tables.
+- Write queries to retrieve data from the tables.
 
 3. Create test_query.py File
--Write functions to retrieve data from the tables.
--Ensure that every query in the query.py file corresponds to a function in the test_query.py file.
+- Write functions to retrieve data from the tables.
+- Ensure that every query in the query.py file corresponds to a function in the test_query.py file.
 
 4. Create populate_db.py File
--This Python script is designed to load data into an SQLite database from CSV files. Before doing so, it checks if the corresponding table already exists. If the table doesn’t exist, it inserts the data from the CSV file; if the table does exist, it informs the user that the table is already present in the database.
+- This Python script is designed to load data into an SQLite database from CSV files. Before doing so, it checks if the corresponding table already exists. If the table doesn’t exist, it inserts the data from the CSV file; if the table does exist, it informs the user that the table is already present in the database.
 
--Write a function to populate the database with data from the csv files.
+- Write a function to populate the database with data from the csv files.
 
 Here’s how the function works:
--Takes the table name (table_name) as a parameter.
--Runs an SQL query that counts how many tables in the database have the specified name.
--If the result (result_data) is 0, it means the table doesn’t exist. In that case, it loads the CSV file using pandas and inserts the data into the database.
--If the table already exists (i.e., result_data > 0), it prints a message saying that the table is already in the database.
+- Takes the table name (table_name) as a parameter.
+- Runs an SQL query that counts how many tables in the database have the specified name.
+- If the result (result_data) is 0, it means the table doesn’t exist. In that case, it loads the CSV file using pandas and inserts the data into the database.
+- If the table already exists (i.e., result_data > 0), it prints a message saying that the table is already in the database.
 
 5. Start Your Virtual Environment
--Navigate to your project directory and run the following command to start your virtual environment:
+- Navigate to your project directory and run the following command to start your virtual environment:
 source ...venv/bin/activate
--Run pytest in the bash terminal.
--Ensure that all the tests pass.
+- Run pytest in the bash terminal.
+- Ensure that all the tests pass.
 
 
