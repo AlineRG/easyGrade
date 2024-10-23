@@ -43,10 +43,10 @@ def test_get_maestros_by_materia_id():
     assert nombre == "Marta"
 
 
-# # # # Test para obtener el promedio de calificaciones por ID de alumno
-# def test_get_average_calificacion_by_alumno_id():
-#     conn = sqlite3.connect("instance/easyGrade.db")
-#     promedio = get_average_calificacion_by_alumno_id(conn, 1)
+# Test para obtener el promedio de calificaciones por ID de alumno
+def test_get_average_calificacion_by_alumno_id():
+    conn = sqlite3.connect("instance/easyGrade.db")
+    promedio = get_average_calificacion_by_alumno_id(conn, 1)
 
     assert promedio is not None
     assert isinstance(promedio, (int, float))
