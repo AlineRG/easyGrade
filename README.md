@@ -42,6 +42,7 @@ Follow these steps to install and set up EasyGrade on your local system:
 4. Run the application
     flask --app myapp/app.py run
 5. Access EasyGrade
+    http://127.0.0.1:5000/
 
 
 # Usage
@@ -113,7 +114,7 @@ Here’s how the function works:
 
 5. Start Your Virtual Environment
 - Navigate to your project directory and run the following command to start your virtual environment:
-source ...venv/bin/activate
+source <path to venv>/venv/bin/activate
 - Run pytest in the bash terminal.
 - Ensure that all the tests pass.
 
