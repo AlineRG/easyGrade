@@ -38,11 +38,15 @@ Follow these steps to install and set up EasyGrade on your local system:
 ```
 2. Create a virtual environment 
 3. Install dependencies:
+    ```bash
     pip install -r requirements.txt
+    ```
 4. Run the application
+    ```
     flask --app myapp/app.py run
+    ```
 5. Access EasyGrade
-    http://127.0.0.1:5000/
+    [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 
 # Usage
@@ -53,6 +57,7 @@ Follow these steps to install and set up EasyGrade on your local system:
 
    ```bash
    flask --app myapp/app.py run
+   ```
 
 3. User Registration:
 - To register as a teacher, navigate to the "Register" page and enter your details.
@@ -64,15 +69,20 @@ Follow these steps to install and set up EasyGrade on your local system:
 # Database 
 
 1. Import modules 
+```python
 import sqlite3
 import os
+```
 
 2. Conexion and create the database file
+```python
 conn = sqlite3.connect("instance/myDB.db")
 print("Opened database successfully")
+```
 
 3. Create tables on database.py
 Example
+```
 conn.execute(
     """CREATE TABLE MAESTROS
          (ID INTEGER PRIMARY KEY NOT NULL,
@@ -83,6 +93,7 @@ conn.execute(
          CORREO_ELECTRONICO VARCHAR NOT NULL);"""
 )
 print("Table MAESTROS created successfully")
+```
 
 4. Run the file
 When this file is executed, a database file named myDB.db is created in the instance directory. 
@@ -94,10 +105,10 @@ When this file is executed, a database file named myDB.db is created in the inst
 - Create a csv_files folder inside the database folder.
 - Upload all .csv files into the folder.
 
-2. Create query.py File
+2. Create `query.py` File
 - Write queries to retrieve data from the tables.
 
-3. Create test_query.py File
+3. Create `test_query.py` File
 - Write functions to retrieve data from the tables.
 - Ensure that every query in the query.py file corresponds to a function in the test_query.py file.
 
@@ -114,7 +125,9 @@ Here’s how the function works:
 
 5. Start Your Virtual Environment
 - Navigate to your project directory and run the following command to start your virtual environment:
+```bash
 source <path to venv>/venv/bin/activate
+```
 - Run pytest in the bash terminal.
 - Ensure that all the tests pass.
 
