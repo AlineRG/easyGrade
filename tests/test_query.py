@@ -50,7 +50,7 @@ def test_get_average_calificacion_by_alumno_id():
 
     assert promedio is not None
     assert isinstance(promedio, (int, float))
-    assert promedio == 9.0, f"Se esperaba un promedio de 8.0, pero se obtuvo {promedio}"
+    assert promedio == 9.0
 
 
 # Test para obtener materias por ID de maestro
