@@ -35,6 +35,8 @@ nav {
     top: 10px; 
     right: 10px;
 }
+
+.topLinks ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
