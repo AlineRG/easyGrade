@@ -27,4 +27,8 @@ body, html {
 nav {
     margin-top: 20px;
 }
+.topLinks {
     position: fixed;
+    top: 10px; 
+    right: 10px;
+}
