@@ -42,3 +42,15 @@ nav {
     padding: 0;
     display: flex;
     gap: 10px;
+}
+
+.topLinks li{
+    display: inline-block;
+}
+
+.topLinks a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
