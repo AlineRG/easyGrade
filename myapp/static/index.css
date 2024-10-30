@@ -104,3 +104,19 @@ nav {
 .tareas li{
     margin-bottom: 10px;
 }
+
+.calificaciones{
+    position: fixed;
+    top: 250px;
+    left: 10px;
+}
+
+.calificaciones ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.calificaciones li{
+    margin-bottom: 10px;
+}
