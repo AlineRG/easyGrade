@@ -55,3 +55,20 @@ nav {
     font-weight: bold;
 }
 
+/* LEFT LINKS */
+
+.profile{
+    position: fixed;
+    top: 100px;
+    left: 10px;
+}
+
+.profile ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile li{
+    margin-bottom: 10px;
+}
