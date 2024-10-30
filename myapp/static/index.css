@@ -72,3 +72,19 @@ nav {
 .profile li{
     margin-bottom: 10px;
 }
+
+.clases{
+    position: fixed;
+    top: 150px;
+    left: 10px;
+}
+
+.clases ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clases li{
+    margin-bottom: 10px;
+}
