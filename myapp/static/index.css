@@ -1,138 +1,58 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
+html, body {
     height: 100%;
+}
+body {
     display: flex;
-    flex-direction: column; 
     align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
 }
 
-/* HEADER */
-
-.header {
-    text-align: center;
-    padding: 20px;
-    background-color: #B2BEB5;
-    border-radius: 8px;
-    width: 80%;
+.main-container {
+    width: 100%;
     max-width: 600px;
-    margin-top: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-nav {
-    margin-top: 20px;
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* LINKS */
 
-.topLinks {
+header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
     position: fixed;
-    top: 10px; 
-    right: 10px;
-    background-color: #B2BEB5;
+    top: 0;
+    z-index: 1000;
 }
 
-.topLinks ul {
+header nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    gap: 10px;
 }
 
-.topLinks li{
-    display: inline-block;
+header nav ul li {
+    display: inline;
+    margin-right: 10px;
 }
 
-.topLinks a {
+header nav ul li a {
+    color: #ffffff;
     text-decoration: none;
-    color: #000;
-    font-weight: bold;
-}
-
-/* LEFT LINKS */
-
-.profile{
-    position: fixed;
-    top: 100px;
-    left: 10px;
-}
-
-.profile ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.profile li{
-    margin-bottom: 10px;
-}
-
-.clases{
-    position: fixed;
-    top: 150px;
-    left: 10px;
-}
-
-.clases ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.clases li{
-    margin-bottom: 10px;
-}
-
-.tareas{
-    position: fixed;
-    top: 200px;
-    left: 10px;
-}
-
-.tareas ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.tareas li{
-    margin-bottom: 10px;
-}
-
-.calificaciones{
-    position: fixed;
-    top: 250px;
-    left: 10px;
-}
-
-.calificaciones ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.calificaciones li{
-    margin-bottom: 10px;
-}
-
-.salir{
-    position: fixed;
-    top: 500px;
-    left: 10px;
-}
-
-.salir ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.salir li{
-    margin-bottom: 10px;
+    font-size: 18px;
 }

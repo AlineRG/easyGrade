@@ -1,0 +1,138 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+/* HEADER */
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #B2BEB5;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+/* LINKS */
+
+.topLinks {
+    position: fixed;
+    top: 10px; 
+    right: 10px;
+    background-color: #B2BEB5;
+}
+
+.topLinks ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.topLinks li{
+    display: inline-block;
+}
+
+.topLinks a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* LEFT LINKS */
+
+.profile{
+    position: fixed;
+    top: 100px;
+    left: 10px;
+}
+
+.profile ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile li{
+    margin-bottom: 10px;
+}
+
+.clases{
+    position: fixed;
+    top: 150px;
+    left: 10px;
+}
+
+.clases ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clases li{
+    margin-bottom: 10px;
+}
+
+.tareas{
+    position: fixed;
+    top: 200px;
+    left: 10px;
+}
+
+.tareas ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tareas li{
+    margin-bottom: 10px;
+}
+
+.calificaciones{
+    position: fixed;
+    top: 250px;
+    left: 10px;
+}
+
+.calificaciones ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.calificaciones li{
+    margin-bottom: 10px;
+}
+
+.salir{
+    position: fixed;
+    top: 500px;
+    left: 10px;
+}
+
+.salir ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.salir li{
+    margin-bottom: 10px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido a EasyGrade</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}?v=1.0">
+</head>
+<body>
+    <div class="topContainer">
+    <div class="header">
+        <h1>Bienvenido a EasyGrade!</h1>
+    </div>
+    <nav class="topLinks">
+        <ul>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+        </ul>
+    </nav>
+</div>
+<nav class="profile">
+    <ul>
+        <li><a href="#profile">Profile</a></li>
+    </ul>
+</nav>
+<nav class="clases">
+    <ul>
+        <li><a href="#misClases">Mis clases</a></li>
+    </ul>
+</nav>
+<nav class="tareas">
+    <ul>
+        <li><a href="#tareas">Tareas</a></li>
+    </ul>
+</nav>
+<nav class="calificaciones">
+    <ul>
+        <li><a href="#Calificaciones">Calificaciones</a></li>
+    </ul>
+</nav>
+<nav class="salir">
+    <ul>
+        <li><a href="{{ url_for('login') }}">Salir</a></li>
+    </ul>
+</nav>
+</body>
+</html>
