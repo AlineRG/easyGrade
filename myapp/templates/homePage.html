@@ -6,11 +6,11 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homePage.css') }}?v=1.0">
 </head>
-<body>
     <div class="topContainer">
     <div class="header">
         <h1>Bienvenido a EasyGrade!</h1>
     </div>
+<body class="min-h-screen bg-gray-100 flex flex-col">
     <nav class="topLinks">
         <ul>
             <li><a href="{{ url_for('login') }}">Login</a></li>
