@@ -12,9 +12,9 @@
     <header class="header bg-gray-200 p-4 flex justify-between items-center">
         <h1 class="text-2xl font-bold">Bienvenido a EasyGrade!</h1>
     <nav class="topLinks">
-        <ul>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+        <ul class="flex space-x-4">
+            <li><a href="{{ url_for('login') }}" class="font-semibold hover:underline">Login</a></li>
+            <li><a href="{{ url_for('register') }}" class="font-semibold hover:underline">Register</a></li>
         </ul>
     </nav>
 </div>
