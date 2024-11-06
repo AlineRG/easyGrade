@@ -9,7 +9,10 @@
 <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
     <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-md text-center">
         <h1 class="text-3xl font-bold text-gray-800 mb-6">Bienvenido a EasyGrade!</h1>
+        <nav class="flex flex-col space-y-4"></nav>
             <a href="{{ url_for('login') }}" class="font-semibold hover:underline">Login</a>
             <a href="{{ url_for('register') }}" class="font-semibold hover:underline">Register</a>
+        </nav>
+    </div>
 </body>
 </html>
