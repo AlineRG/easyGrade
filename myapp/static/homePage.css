@@ -40,6 +40,9 @@ body, html {
     text-decoration: underline;
 }
 
+.content-container {
+    display: flex;
+    flex: 1;
 }
 
 .sidebar {
