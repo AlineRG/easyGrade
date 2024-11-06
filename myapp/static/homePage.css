@@ -36,6 +36,8 @@ body, html {
     color: black;
 }
 
+.topLinks a:hover {
+    text-decoration: underline;
 }
 
 }
