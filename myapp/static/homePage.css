@@ -16,6 +16,9 @@ body, html {
     align-items: center;
 }
 
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 /* LINKS */
