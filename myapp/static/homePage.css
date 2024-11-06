@@ -49,18 +49,6 @@ body, html {
 
 }
 
-.salir{
-    position: fixed;
-    top: 500px;
-    left: 10px;
 }
 
-.salir ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.salir li{
-    margin-bottom: 10px;
 }
