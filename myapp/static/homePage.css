@@ -54,6 +54,8 @@ body, html {
 
 }
 
+.sidebar a:hover {
+    background-color: #edf2f7;
 }
 
 }
