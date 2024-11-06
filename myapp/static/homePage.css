@@ -40,20 +40,9 @@ body, html {
 
 }
 
-.tareas{
-    position: fixed;
-    top: 200px;
-    left: 10px;
 }
 
-.tareas ul{
-    list-style-type: none;
-    margin: 0;
     padding: 0;
-}
-
-.tareas li{
-    margin-bottom: 10px;
 }
 
 .calificaciones{
