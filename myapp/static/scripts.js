@@ -20,3 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
         `;
     });
 
+    document.getElementById("link-tareas").addEventListener("click", function(event) {
+        event.preventDefault();
+        contentBox.innerHTML = `
+            <h2 class="text-xl font-semibold mb-4">Tareas</h2>
+            <p>Listado de tareas pendientes y completadas.</p>
+        `;
+    });
+
