@@ -12,3 +12,11 @@ document.addEventListener("DOMContentLoaded", function() {
         `;
     });
 
+    document.getElementById("link-misClases").addEventListener("click", function(event) {
+        event.preventDefault();
+        contentBox.innerHTML = `
+            <h2 class="text-xl font-semibold mb-4">Mis Clases</h2>
+            <p>Información sobre las clases en las que estás inscrito.</p>
+        `;
+    });
+
