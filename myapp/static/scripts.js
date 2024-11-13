@@ -28,3 +28,11 @@ document.addEventListener("DOMContentLoaded", function() {
         `;
     });
 
+    document.getElementById("link-calificaciones").addEventListener("click", function(event) {
+        event.preventDefault();
+        contentBox.innerHTML = `
+            <h2 class="text-xl font-semibold mb-4">Calificaciones</h2>
+            <p>Resumen de las calificaciones en las diferentes materias.</p>
+        `;
+    });
+});
