@@ -6,3 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("link-profile").addEventListener("click", function(event) {
 // Prevent the click on the link (link-profile) from navigating to a new page
         event.preventDefault();
+        contentBox.innerHTML = `
+            <h2 class="text-xl font-semibold mb-4">Perfil</h2>
+            <p>Información del perfil de usuario.</p>
+        `;
+    });
+
