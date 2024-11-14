@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido a EasyGrade</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homePage.css') }}?v=1.0">
+</head>
+<body class="min-h-screen bg-gray-100 flex flex-col">
+
+<!-- HEADER -->
+    <header class="header bg-gray-200 p-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Bienvenido a EasyGrade!</h1>
+    <nav class="topLinks">
+        <ul class="flex space-x-4">
+            <li><a href="{{ url_for('login') }}" class="font-semibold hover:underline">Login</a></li>
+            <li><a href="{{ url_for('register') }}" class="font-semibold hover:underline">Register</a></li>
+        </ul>
+    </nav>
+    </header>
+
+<!-- Sidebar -->
+<div class="content-container flex flex-1">
+    <nav class="sidebar bg-white w-64 p-4 shadow-md">
+        <ul class="space-y-4">
+            <li><a href="#profile" id="link-profile" class="block hover:bg-gray-100 p-2 rounded">Profile</a></li>
+            <li><a href="#misClases" id="link-misClases" class="block hover:bg-gray-100 p-2 rounded">Mis clases</a></li>
+            <li><a href="#tareas" id="link-tareas" class="block hover:bg-gray-100 p-2 rounded">Tareas</a></li>
+            <li><a href="#Calificaciones" id="link-calificaciones" class="block hover:bg-gray-100 p-2 rounded">Calificaciones</a></li>
+        </ul>
+        <div class="mt-auto pt-4">
+            <a href="{{ url_for('login') }}" class="block hover:bg-gray-100 p-2 rounded text-red-600 font-semibold">Salir</a>
+        </div>
+    </nav>
+
+<!-- CONTENT -->
+<main class="main-content flex-1 p-8">
+    <div class="content-box bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-xl font-semibold mb-4">Contenido Principal</h2>
+        <p>Contenido de clases, tareas y calificaciones.</p>
+    </div>
+</main>
+</div>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

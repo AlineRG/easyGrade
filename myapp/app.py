@@ -8,7 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = "mysecret"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///myDB.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///easyGrade.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
@@ -58,7 +58,7 @@ def login():
         user = User.query.filter_by(email=login_form.email.data).first()
         if user and check_password_hash(user.password, login_form.password.data):
             flash("Inicio de sesion existoso")
-            return redirect(url_for("index"))
+            return redirect(url_for("homePage"))
         else:
             flash("Usuario o Contraseña incorrectos")
 
@@ -95,6 +95,11 @@ def register():
 @app.route("/index")
 def index():
     return render_template("index.html")
+
+@app.route("/homePage")
+def homePage():
+    return render_template("homePage.html")
+
 
 
 with app.app_context():
