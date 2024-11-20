@@ -43,7 +43,7 @@ Follow these steps to install and set up EasyGrade on your local system:
     ```
 4. Run the application
     ```
-    flask --app myapp/app.py run
+    flask --app app/app.py run
     ```
 5. Access EasyGrade
     [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
@@ -56,7 +56,7 @@ Follow these steps to install and set up EasyGrade on your local system:
 2. Start the Flask application:
 
    ```bash
-   flask --app myapp/app.py run
+   flask --app app/app.py run
    ```
 
 3. User Registration:
