@@ -4,7 +4,7 @@ from wtforms import StringField, PasswordField, SubmitField, validators
 from flask_sqlalchemy import SQLAlchemy
 from wtforms.validators import InputRequired, Email, Length
 from werkzeug.security import generate_password_hash, check_password_hash
-from routes import home_page, landing_page, login_register
+from app.routes import home_page, landing_page, login_register
 
 
 app = Flask(__name__)
