@@ -7,3 +7,4 @@ instance/easyGrade.db
 .ipynb_checkpoints
 database/__pycache__
 tests/__pycache__
+.pytest_cache
