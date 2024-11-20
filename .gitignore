@@ -3,6 +3,7 @@ app/Include
 app/Lib
 app/Scripts
 app/pyvenv.cfg
+app/routes/__pycache__
 instance/easyGrade.db
 .ipynb_checkpoints
 database/__pycache__
