@@ -4,6 +4,8 @@ from wtforms import StringField, PasswordField, SubmitField, validators
 from flask_sqlalchemy import SQLAlchemy
 from wtforms.validators import InputRequired, Email, Length
 from werkzeug.security import generate_password_hash, check_password_hash
+from routes import home_page, landing_page, login_register
+
 
 app = Flask(__name__)
 
@@ -96,10 +98,10 @@ def register():
 def index():
     return render_template("index.html")
 
+
 @app.route("/homePage")
 def homePage():
     return render_template("homePage.html")
-
 
 
 with app.app_context():
