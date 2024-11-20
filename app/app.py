@@ -8,6 +8,7 @@ from app.routes import home_page, landing_page, login_register
 
 
 app = Flask(__name__)
+app.register_blueprint(landing_page.landing_page)
 
 app.config["SECRET_KEY"] = "mysecret"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///easyGrade.db"
@@ -93,10 +94,10 @@ def register():
     )
 
 
-@app.route("/")
-@app.route("/index")
-def index():
-    return render_template("index.html")
+# @app.route("/")
+# @app.route("/index")
+# def index():
+#     return render_template("index.html")
 
 
 @app.route("/homePage")
