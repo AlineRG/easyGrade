@@ -4,8 +4,11 @@ from wtforms import StringField, PasswordField, SubmitField, validators
 from flask_sqlalchemy import SQLAlchemy
 from wtforms.validators import InputRequired, Email, Length
 from werkzeug.security import generate_password_hash, check_password_hash
+from app.routes import home_page, landing_page, login_register
+
 
 app = Flask(__name__)
+app.register_blueprint(landing_page.landing_page)
 
 app.config["SECRET_KEY"] = "mysecret"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///easyGrade.db"
@@ -91,15 +94,15 @@ def register():
     )
 
 
-@app.route("/")
-@app.route("/index")
-def index():
-    return render_template("index.html")
+# @app.route("/")
+# @app.route("/index")
+# def index():
+#     return render_template("index.html")
+
 
 @app.route("/homePage")
 def homePage():
     return render_template("homePage.html")
-
 
 
 with app.app_context():
