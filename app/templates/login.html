@@ -12,7 +12,7 @@
         <div>
             <nav>
                 <ul>
-                    <li><a href="{{ url_for('login') }}">Home</a></li>
+                    <li><a href="{{ url_for('login_register.login') }}">Home</a></li>
                 </ul>
             </nav>
         </div>
@@ -23,7 +23,7 @@
 
             <div>
                 <p>Iniciar sesión</p>
-                <form method="POST" action="{{ url_for('login') }}">
+                <form method="POST" action="{{ url_for('login_register.login') }}">
                     {{ login_form.hidden_tag() }}
                     <div class="form-group">
                         {{ login_form.email.label(class="form-label") }}
@@ -45,7 +45,7 @@
             
             <div class="form-container">
                 <p>Registrar usuario</p>
-                <form method="POST" action="{{ url_for('register') }}">
+                <form method="POST" action="{{ url_for('login_register.login') }}">
                     {{ register_form.hidden_tag() }}
                     <div class="form-group">
                         {{ register_form.username.label(class="form-label") }}
