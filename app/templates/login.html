@@ -20,9 +20,20 @@
     
     <div class="main-container">
         <main>
+            <div class="container mt-4">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
 
             <div>
-                <p>Iniciar sesión</p>
+                <h2>Iniciar sesión</h2>
                 <form method="POST" action="{{ url_for('login_register.login') }}">
                     {{ login_form.hidden_tag() }}
                     <div class="form-group">
@@ -43,9 +54,9 @@
                 </form>
             </div>
             
-            <div class="form-container">
-                <p>Registrar usuario</p>
-                <form method="POST" action="{{ url_for('login_register.login') }}">
+            <div class="form-container mt-4">
+                <h2>Registrar usuario</h2>
+                <form method="POST" action="{{ url_for('login_register.register') }}">
                     {{ register_form.hidden_tag() }}
                     <div class="form-group">
                         {{ register_form.username.label(class="form-label") }}
@@ -68,20 +79,7 @@
                             <span class="text-danger">{{ error }}</span>
                         {% endfor %}
                     </div>
-                    <div class="container mt-4">
-                        {% with messages = get_flashed_messages() %}
-                            {% if messages %}
-                                <div class="alert alert-info" role="alert">
-                                    <ul>
-                                        {% for message in messages %}
-                                            <li>{{ message }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            {% endif %}
-                        {% endwith %}
-                    </div>
-                    <button type="submit" class="btn btn-dark btn-block">Crear usuario</button>
+                    {{ register_form.submit(class="btn btn-success btn-block") }}
                 </form>
             </div>
         </main>
@@ -93,4 +91,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
