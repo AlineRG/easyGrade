@@ -21,20 +21,22 @@
     <div class="main-container">
         <main>
             <div class="container mt-4">
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            <div class="alert alert-{{ category }}" role="alert">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
+                <h2>Edit Profile</h2>
+                <form method="POST" action="{{ url_for('edit_profile.edit_profile') }}">
+                    {{ edit_profile_form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ edit_profile_form.telefono.label(class="form-label") }}
+                        {{ edit_profile_form.telefono(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ edit_profile_form.direccion.label(class="form-label") }}
+                        {{ edit_profile_form.direccion(class="form-control") }}
+                    </div>
+                    {{ edit_profile_form.submit(class="btn btn-primary") }}
+                </form>
             </div>
-
-    <!-- JS de Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </main>
+    </div>
+    
 </body>
 </html>
