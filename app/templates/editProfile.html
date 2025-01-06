@@ -25,6 +25,18 @@
                 <form method="POST" action="{{ url_for('edit_profile.edit_profile') }}">
                     {{ edit_profile_form.hidden_tag() }}
                     <div class="form-group">
+                        {{ edit_profile_form.nombre.label(class="form-label") }}
+                        {{ edit_profile_form.nombre(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ edit_profile_form.apellido.label(class="form-label") }}
+                        {{ edit_profile_form.apellido(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ edit_profile_form.email.label(class="form-label") }}
+                        {{ edit_profile_form.email(class="form-control") }}
+                    </div>
+                    <div class="form-group">
                         {{ edit_profile_form.telefono.label(class="form-label") }}
                         {{ edit_profile_form.telefono(class="form-control") }}
                     </div>
@@ -32,11 +44,21 @@
                         {{ edit_profile_form.direccion.label(class="form-label") }}
                         {{ edit_profile_form.direccion(class="form-control") }}
                     </div>
-                    {{ edit_profile_form.submit(class="btn btn-primary") }}
+                    <div class="form-group">
+                        {{ edit_profile_form.cumpleanos.label(class="form-label") }}
+                        {{ edit_profile_form.cumpleanos(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ edit_profile_form.rol.label(class="form-label") }}
+                        {{ edit_profile_form.rol(class="form-control") }}
+                    </div>
+                    <div class="d-flex gap-2">
+                        {{ edit_profile_form.submit(class="btn btn-primary") }}
+                        <a href="{{ url_for('edit_profile.edit_profile') }}" class="btn btn-primary">Edit Profile</a>
+                    </div>
                 </form>
             </div>
         </main>
     </div>
-    
 </body>
 </html>
